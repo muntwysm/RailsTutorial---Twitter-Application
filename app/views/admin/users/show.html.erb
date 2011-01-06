@@ -1,0 +1,15 @@
+<table class="profile">
+  <tr>
+    <td class="main">
+      <h2>
+	<%= image_tag("http://www.gravatar.com/avatar.php?gravatar_id=#{Digest::MD5::hexdigest(@user.email)}", :alt => 'Avatar', :class => 'avatar') %>
+        <%= h @user.name %>
+      </h2>
+    </td>
+    <td class="sidebar round">
+      <strong>Name</strong> <%= h @user.name %><br />
+      <strong>URL</strong>  <%= link_to user_path(@user), @user %>
+    </td>
+  </tr>
+</table>
+
