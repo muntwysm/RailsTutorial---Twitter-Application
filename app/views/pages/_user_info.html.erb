@@ -1,0 +1,12 @@
+<div class="user_info">
+  <a href="<%= user_path(current_user) %>">
+    <%= image_tag("http://www.gravatar.com/avatar.php?gravatar_id=#{Digest::MD5::hexdigest(current_user.email)}", :alt => 'Avatar', :class => 'avatar', :width => '30') %>
+    <span class="user_name">
+      <%= h current_user.name %>
+    </span>
+    <span class="microposts">
+      <%= pluralize(current_user.microposts.count, "micropost") %>
+    </span>
+  </a>
+</div>
+

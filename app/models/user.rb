@@ -53,6 +53,10 @@ class User < ActiveRecord::Base
     return user if user.has_password?(submitted_password)
   end
 
+	def feed 
+		#Incomplete feed - requires posts of 'followers'
+		Micropost.all(:conditions => ["user_id = ?",id])
+	end
 
   private
 

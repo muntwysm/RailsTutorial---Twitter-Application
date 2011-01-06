@@ -24,7 +24,8 @@ ActionController::Routing::Routes.draw do |map|
   #   map.resources :products
   map.resources :users, :except => :destroy
   map.resources :sessions, :only => [:new, :create, :destroy]
-	map.resources :posts, :only => [:show, :index]
+  map.resources :microposts, :only => [:create, :destroy]
+
 
   # Sample resource route with options:
   #   map.resources :products, :member => { :short => :get, :toggle => :post }, :collection => { :sold => :get }
