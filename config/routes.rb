@@ -25,6 +25,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users, :except => :destroy
   map.resources :sessions, :only => [:new, :create, :destroy]
   map.resources :microposts, :only => [:create, :destroy]
+  map.resources :users, :member => { :following => :get, :followers => :get }
+  map.resources  :relationships, :only => [:create, :destroy]
 
 
   # Sample resource route with options:

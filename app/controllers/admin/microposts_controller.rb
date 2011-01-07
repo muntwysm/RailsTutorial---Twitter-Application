@@ -15,7 +15,7 @@ class Admin::MicropostsController < ApplicationController
   def update
       @micropost = Micropost.find(params[:id])
       if @micropost.update_attributes(params[:micropost])
-        flash[:success] = 'Microost was successfully updated.'
+        flash[:success] = 'Micropost was successfully updated.'
         redirect_to admin_microposts_path
       else
         render "edit" 
