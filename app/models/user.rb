@@ -72,10 +72,10 @@ class User < ActiveRecord::Base
   end
 
 
-	def feed 
-		#Incomplete feed - requires posts of 'followers'
-		Micropost.all(:conditions => ["user_id = ?",id])
-	end
+  def feed
+    Micropost.from_users_followed_by(self)
+  end
+
 
   private
 
