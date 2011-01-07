@@ -44,7 +44,7 @@ class Admin::UsersController < ApplicationController
   def destroy
     User.find(params[:id]).destroy
     flash[:success] = "User destroyed."
-    redirect_to admin_users_path
+    redirect_to admin_user_path
   end
 
   private

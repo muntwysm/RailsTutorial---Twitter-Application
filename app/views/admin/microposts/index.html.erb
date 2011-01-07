@@ -1,0 +1,18 @@
+<h2>All microsposts</h2>
+
+<p><%= "MyTwitt Microosts: #{@all_microposts.count}" %></p>
+
+<table class="profile">
+  <tr>
+    <td class="main">
+      <% unless @microposts.empty? %>
+					<%= will_paginate %>        
+					<table class="microposts">
+          <%= render @microposts %>
+        </table>
+        <%= will_paginate %>
+      <% end %>
+    </td>
+  </tr>
+</table>
+
